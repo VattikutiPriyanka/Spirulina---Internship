@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart</title>
+  <header class="header">
+   <section class="flex">
+    <a href="#cart" class="logo">My Cart</a>
+ <nav class="navbar">
+       <a href="index.html">Home</a>
+       <a href="card.html">View Products</a>
+       <a href="cart.html">View Cart</a>
+       <a href="feedback.html">Feedback</a>
+       <a href="login.html">Login/Signup</a>
+    </nav>
+    <div id="menu-btn" class="fas fa-bars"></div>
+    </section>
+  </header>
+  <style>
+    body {
+      font-family: Nunito, sans-serif;
+      margin-top:80px;
+      padding: 20px;
+      background:url(https://wallpaperaccess.com/full/1209651.jpg) no-repeat;
+      background-size: cover;
+    }
+    
+    h1 {
+      text-align: center;
+      color:black;
+      font-size: 40px;
+    }
+    h2{
+      font-size: 25px;
+      color:rgb(232, 111, 19);
+    }
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      border: 1px solid #171515;
+      border-radius: 30px;
+      border-width: 5px;
+      padding: 20px;
+      font-size: 30px;
+      background:white;
+    }
+    
+    .item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    
+    .item input {
+      width: 60px;
+      text-align: center;
+      font-size: 20px;
+      background-color: #292929;
+      color:azure;
+    }
+    
+    .item button {
+      background-color: #26dd2c;
+      color: rgb(243, 238, 238);
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-color: #080808;
+    }
+    
+    .cart {
+        border-top: 1px solid #4e4b4b;
+        display:flex;
+        justify-content: space-between;
+      margin-top: 50px;
+      padding-top: 30px;
+      font-size: 20px;
+    }
+    .cart h2{
+      color: rgb(232, 111, 19);
+      font-size: 30px;
+    }
+   .close button{
+    background-color: #0e0f0e;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+       }
+   
+  </style>
+</head>
+<body>
+  <h1>Shopping Cart</h1>
+  <div class="container">
+    <div class="item">
+      <span>Spirulina-ap57</span>
+      <input type="number" min="1" value="1">
+      <button class="add-to-cart" onclick="addToCartElement(event)">Add Item</button>
+    </div>
+    <div class="item">
+      <span>Spirulina powder</span>
+      <input type="number" min="1" value="1">
+      <button class="add-to-cart" onclick="addToCartElement(event)">Add Item</button>
+    </div>
+    <div class="item">
+      <span>Spirulina Syrup</span>
+      <input type="number" min="1" value="1">
+      <button class="add-to-cart" onclick="addToCartElement(event)">Add Item</button>
+    </div>
+    <div class="item">
+        <span>Spirulina mixture</span>
+        <input type="number" min="1" value="1">
+        <button class="add-to-cart" onclick="addToCartElement(event)">Add Item</button>
+      </div>
+    <div class="cart">
+      <h2>My Cart:</h2>
+      <ul id="cart-items"></ul>
+      <div class="close">
+        <button class="emptycart" onclick="clearCart(event)">Clearcart</button>
+      </div>
+    </div>
+    <br>
+   <h2> <span>Total Amount : Rs.<span id="total-amount">0</span></span></h2>
+  </div>
+
+  <script>
+    var addToCartButtons = document.querySelectorAll('.add-to-cart');
+    var cartItems = document.getElementById('cart-items');
+    var totalAmountSpan = document.getElementById('total-amount');
+    var totalAmount = 0;
+    var itemPrices = {
+      'Spirulina-ap57': 300,
+      'Spirulina powder': 250,
+      'Spirulina Syrup': 100,
+      'Spirulina mixture': 100
+    };
+    function addToCartElement(event) {
+      const item = event.target.parentNode;
+      const itemName = item.querySelector('span').innerText;
+      const itemQuantity = item.querySelector('input').value;
+      const itemPrice = itemPrices[itemName];
+      const li = document.createElement('li');
+      li.innerText = `${itemName} - Quantity: ${itemQuantity}`;
+      cartItems.appendChild(li);
+      totalAmount += itemPrice * parseInt(itemQuantity);
+      totalAmountSpan.innerText = totalAmount;
+    }
+    function clearCart() {
+  cartItems.innerHTML = '';
+  totalAmount = 0; 
+  totalAmountSpan.innerText = totalAmount
+}
+const clearButton = document.getElementById('clear-button');
+clearButton.addEventListener('click', clearCart);
+  </script>
+</body>
+</html>

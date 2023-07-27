@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login/Signup</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <header class="header">
+    
+   <section class="flex">
+
+    <a href="#login" class="logo">SPIRULINA</a>
+
+    <nav class="navbar">
+       <a href="index.html">Home</a>
+       <a href="card.html">View Products</a>
+       <a href="cart.html">View Cart</a>
+       <a href="feedback.html">Feedback</a>
+       <a href="login.html">Login/Signup</a>
+    </nav>
+    <div id="menu-btn" class="fas fa-bars"></div>
+    </section>
+  </header> 
+  <style>
+    body{
+        margin-top: 130px;
+        background:url(https://t3.ftcdn.net/jpg/05/74/98/30/360_F_574983020_1ebtYrNUHq9IwPDCuwOc6SODOgMg5rJY.jpg) no-repeat;
+        background-size:cover;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Login</h2>
+    <form id="login-form">
+      <input type="text" id="login-username" placeholder="  Username" required>
+      <input type="password" id="login-password" placeholder="  Password" required>
+      <input type="submit" value="Login">
+    </form>
+    <hr>
+    <h2>Signup</h2>
+    <form id="signup-form">
+      <input type="text" id="signup-username" placeholder="  Username" required>
+      <input type="password" id="signup-password" placeholder="  Password" required>
+      <input type="submit" value="Signup">
+    </form>
+  </div>
+  <script>
+    const registeredUsers = [];
+    const loginForm = document.getElementById('login-form');
+    const signupForm = document.getElementById('signup-form');
+
+    signupForm.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent form submission
+      const username = document.getElementById('signup-username').value;
+      const password = document.getElementById('signup-password').value;
+      const user = { username, password };
+      registeredUsers.push(user);
+      alert('Signup successful! You can now login with your credentials.');
+      signupForm.reset();
+    });
+    loginForm.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent form submission
+      const username = document.getElementById('login-username').value;
+      const password = document.getElementById('login-password').value;
+      const user = registeredUsers.find(u => u.username === username && u.password === password);
+
+      if (user) {
+        alert('Login successful!');
+      } else {
+        alert('Invalid username or password. Please try again.');
+      }
+      loginForm.reset();
+    });
+  </script>
+</body>
+</html>

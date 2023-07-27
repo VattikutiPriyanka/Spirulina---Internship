@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vitality Max: Empower Health with Spirulina</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+  <header class="header">
+   <section class="flex">
+    <a href="#home" class="logo">SPIRULINA</a>
+    <nav class="navbar">
+       <a href="#home">Home</a>
+       <a href="card.html">View Products</a>
+       <a href="cart.html">View Cart</a>
+       <a href="feedback.html">Feedback</a>
+       <a href="login.html">Login/Signup</a>
+    </nav>
+    <div id="menu-btn" class="fas fa-bars"></div>
+    </section>
+  </header>
+  <div class="home-bg">
+      <section class="home" id="home">
+      <div class="slide-container">
+         <div class="slide active">
+            <div class="image">
+               <img src="https://assets.bonappetit.com/photos/57d32e981844fc374614304d/master/w_1778,h_1536,c_limit/spirulina-dry.jpg" alt="">
+            </div>
+            <div class="content">
+               <h3>Health with Spirulina</h3>
+               <div class="fas fa-angle-left" onclick="prev()"></div>
+               <div class="fas fa-angle-right" onclick="next()"></div>
+            </div>
+         </div>
+         <div class="slide">
+            <div class="image">
+               <img src="https://images.immediate.co.uk/production/volatile/sites/30/2018/02/Spirulina-powder-and-tablets-cb7bbc3.jpg" alt="">
+            </div>
+            <div class="content">
+               <h3>Some Products</h3>
+               <div class="fas fa-angle-left" onclick="prev()"></div>
+               <div class="fas fa-angle-right" onclick="next()"></div>
+            </div>
+         </div>
+         <div class="slide">
+            <div class="image">
+               <img src="https://static.toiimg.com/thumb/msid-81968342,width-1280,resizemode-4/81968342.jpg" alt="">
+            </div>
+            <div class="content">
+               <h3>The Best</h3>
+               <div class="fas fa-angle-left" onclick="prev()"></div>
+               <div class="fas fa-angle-right" onclick="next()"></div>
+            </div>
+         </div>
+      </div> 
+<div>
+   </section>
+   <section class="faq" id="faq">
+      <h1 class="heading">FAQ's</h1>
+      <div class="accordion-container">
+         <div class="accordion active">
+            <div class="accordion-heading">
+               <span>Main use of Spirulina?</span>
+               <i class="fas fa-angle-down"></i>
+            </div>
+            <p class="accrodion-content">
+               
+Spirulina is a blue-green algae that is considered a superfood due to its numerous health benefits. The main uses of spirulina for health include: <br>
+1.Rich Nutritional Profile <br>
+2.Powerful Antioxidant Properties  <br>
+3.Immune System Support <br>
+4.Energy Boost <br>
+5.Detoxification <br>
+6.Cardiovascular Health <br>
+7.Anti-Inflammatory Benefits <br>
+8.Potential Anti-Cancer Properties
+            </p>
+         </div>
+         <div class="accordion">
+            <div class="accordion-heading">
+               <span>How long does it take for delivery?</span>
+               <i class="fas fa-angle-down"></i>
+            </div>
+            <p class="accrodion-content">
+              It is actually based on how distant the delivery is to be made, But due to our great co-ordination we ensure the delivery is done in max of 4-5 days to any place.
+            </p>
+         </div>
+         <div class="accordion">
+            <div class="accordion-heading">
+               <span>Can anyone use them? any prescrition for various products?</span>
+               <i class="fas fa-angle-down"></i>
+            </div>
+            <p class="accrodion-content">
+               Yes anyone can use them irrespective of their age but if u have any health issues then you should let us know when we reach you through a call and a prescription is actually given accordingly by the doctor via call and also a prescription sheet is sent with the products.
+            </p>
+         </div>
+         <div class="accordion">
+            <div class="accordion-heading">
+               <span>Any harm?</span>
+               <i class="fas fa-angle-down"></i>
+            </div>
+            <p class="accrodion-content">
+               Spirulina is generally considered safe for most people when consumed in appropriate doses. It is widely recognized as a nutrient-rich superfood and is often consumed as a dietary supplement or as an ingredient in various food products & There is no harm as we promise you that our staff are highly skilled.
+            </p>
+         </div>
+         <div class="accordion">
+            <div class="accordion-heading">
+               <span>Is it hygenically made?</span>
+               <i class="fas fa-angle-down"></i>
+            </div>
+            <p class="accrodion-content">
+              Yes we took all the safety measures while we are preparing and extracting them, All the medicines are tested and proved.
+            </p>
+         </div>
+      </div> 
+   </section>
+   <div>
+    <section class="footer">
+
+        <div class="box-container">
+     
+           <div class="box">
+              <i class="fas fa-phone"></i>
+              <h3>phone number</h3>
+              <p>+91 1234567890</p>
+              <p>+91 2049785246</p>
+           </div>
+     
+           <div class="box">
+              <i class="fas fa-map-marker-alt"></i>
+              <h3>our address</h3>
+              <p>SRM-AP,522502</p>
+           </div>
+           <div class="box">
+              <i class="fas fa-clock"></i>
+              <h3>opening hours</h3>
+              <p>09:00am to 5:00pm</p>
+           </div>
+           <div class="box">
+              <i class="fas fa-envelope"></i>
+              <h3>email address</h3>
+              <p>abc@gmail.com</p>
+              <p>def@gmail.com</p>
+           </div>
+        </div>
+        <div class="credit">
+           &copy; copyright @ 2023 by <span>Priyanka</span> | All rights reserved!
+        </div>
+     </section>
+  <script>
+   let navbar = document.querySelector('.header .flex .navbar');
+let slides = document.querySelectorAll('.home-bg .home .slide-container .slide');
+document.querySelector('#menu-btn').onclick = () =>{
+   navbar.classList.toggle('active');
+}
+window.onscroll = () =>{
+   navbar.classList.remove('active');}
+let index = 0;
+function next(){
+   slides[index].classList.remove('active');
+   index = (index + 1) % slides.length;
+   slides[index].classList.add('active');
+}
+
+function prev(){
+   slides[index].classList.remove('active');
+   index = (index - 1 + slides.length) % slides.length;
+   slides[index].classList.add('active');
+}
+let accordion = document.querySelectorAll('.faq .accordion-container .accordion');
+
+accordion.forEach(acco =>{
+   acco.onclick = () =>{
+      accordion.forEach(remove => remove.classList.remove('active'));
+      acco.classList.add('active');
+   }
+});
+  </script>
+</body>
+</html>
